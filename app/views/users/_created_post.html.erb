@@ -1,0 +1,9 @@
+<% @created_posts.each do |post| %>
+  <div class="row">
+    <%= link_to post.title, post %><br>
+    <% if post_owner? %>
+      <%= link_to "Edit this blog", edit_post_path(post) %>
+    <% end %>
+  </div>
+  <hr>
+<% end %>

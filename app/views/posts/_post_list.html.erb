@@ -1,0 +1,10 @@
+<div class="col-lg-8 col-lg-offset-2">
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 bottom-paginate">
+    <%= paginate @posts %>
+  </div>
+</div>

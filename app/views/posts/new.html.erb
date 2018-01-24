@@ -1,0 +1,25 @@
+<div class="container-fluid post-index">
+  <div class="row new-post">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+      <h1 class="form-title"><%= t ".heading" %></h1>
+      <%= form_for @post do |f| %>
+        <div class="form-label">
+          <%= f.label :title, t(".name"), class: "form-label anchor", id: "form-name" %>
+          <%= f.text_field :title, class: "form-input", placeholder: t(".post_name") %>
+        </div>
+
+        <div class="form-label">
+          <%= f.label :body, t(".des"), class: "control-label anchor", id: "form-des" %>
+          <%= f.text_area :body, id: "markdown", class: "form-control", cols: "40", rows: "10",
+            placeholder: t(".post_des") %>
+        </div>
+
+        <div class="form-label">
+          <div>
+            <%= f.submit t(".sub"), class: "W2Gbutton" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

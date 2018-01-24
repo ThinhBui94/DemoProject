@@ -1,0 +1,37 @@
+<div class="container user-profile">
+  <div class="row">
+    <aside class="col-md-3">
+      <section>
+        <p><b>Email:</b> <%= @user.email %></p>
+        <p><%= link_to "Edit Profile", edit_user_path(current_user) %></p>
+        <div class="relation row">
+          <div class="col-lg-6">
+            <p>Add friend</p>
+          </div>
+          <div class="col-lg-6">
+            <p>Cancel</p>
+          </div>
+        </div>
+      </section>
+    </aside>
+    <div class="col-md-9 user-tab">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#friend">Friends</a></li>
+        <li><a data-toggle="tab" href="#like">Blog liked</a></li>
+        <li><a data-toggle="tab" href="#comment">Comments</a></li>
+        <li><a data-toggle="tab" href="#create">Created Blogs</a></li>
+      </ul>
+      <div class="tab-content clearfix">
+        <div id="friend" class="tab-pane fade in active">
+        </div>
+        <div id="like" class="tab-pane fade">
+        </div>
+        <div id="comment" class="tab-pane fade">
+        </div>
+        <div id="create" class="tab-pane fade">
+          <%= render "created_post" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

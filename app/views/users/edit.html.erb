@@ -1,0 +1,19 @@
+<div class="edit-form event-index">
+  <h1 class="text-center"><%= t".heading" %></h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @user do |f| %>
+        <%= f.label :email, class: "form-label" %>
+        <%= f.email_field :email, class: "form-input"  %>
+
+        <%= f.label :password, class: "form-label" %>
+        <%= f.password_field :password, class: "form-input"  %>
+
+        <%= f.label :password_confirmation, class: "form-label"%>
+        <%= f.password_field :password_confirmation, class: "form-input"  %>
+
+        <%= f.submit t(".save_changes")%>
+      <% end %>
+    </div>
+  </div>
+</div>

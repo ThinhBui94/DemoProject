@@ -1,0 +1,72 @@
+@import 'bootstrap';
+@import "simplemde.min";
+
+.main-body {
+  font-family: 'Playfair Display', serif;
+}
+
+.main-content {
+  padding: 0;
+}
+
+.navbar {
+  background-color: white;;
+  border: none;
+  border-radius: 0;
+
+  .container-fluid {
+    .navbar-brand {
+      margin-left: 0 !important;
+      text-align: center;
+      font-family: 'Berkshire Swash', cursive;
+      font-size: 40px;
+      color: black;
+      margin: 5px 0;
+    }
+
+    .navbar-menu {
+      .navbar-nav {
+        margin: 10px 0;
+        float: none;
+        li {
+          font-family: 'Playfair Display', serif;
+          text-align: center;
+          color: white;
+          font-size: 20px;
+
+          a {
+            color: #9d9d9d;
+          }
+        }
+      }
+    }
+  }
+}
+
+.new-post {
+  #post_title {
+    border: none;
+    border-bottom: 1px solid grey;
+    margin-left: 10px;
+    outline: none;
+  }
+}
+
+div.form-label {
+  margin: 10px 0;
+}
+
+h1.form-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+div.markdown {
+  img {
+    width: 100%;
+  }
+}

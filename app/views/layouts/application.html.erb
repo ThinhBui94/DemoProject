@@ -3,12 +3,16 @@
   <head>
     <title>DemoProject</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application",
+      "https://fonts.googleapis.com/css?family=Playfair+Display",
+      "https://fonts.googleapis.com/css?family=Berkshire+Swash",
+      media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body class="main-body">
+    <div class="container main-content">
+      <%= render "layouts/header" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
