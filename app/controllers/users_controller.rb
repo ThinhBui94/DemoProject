@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @created_posts = @user.posts
+    @like_posts = @user.like_posts
   end
 
   def edit

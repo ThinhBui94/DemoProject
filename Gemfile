@@ -24,18 +24,18 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platform: :mri
-  gem "sqlite3"
+  gem "sqlite3", "1.3.13"
 end
 
 group :development do
-  gem "web-console", ">= 3.3.0"
   gem "listen", "~> 3.0.5"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "web-console", ">= 3.3.0"
 end
 
 group :production do
-  gem "pg"
+  gem "pg", "0.20"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

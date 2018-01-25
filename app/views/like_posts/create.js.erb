@@ -1,0 +1,6 @@
+if(<%= @temp %>){
+  $('#like_<%= @current_post.id %>').addClass('fa-thumbs-o-up-press');
+} else {
+  $('#like_<%= @current_post.id %>').removeClass('fa-thumbs-o-up-press');
+}
+$('#like_count_<%= @current_post.id %>').html('<%= @current_post.like_posts.count %>');

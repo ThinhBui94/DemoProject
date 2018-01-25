@@ -14,6 +14,10 @@ en:
       save: "Save your changes"
       heading: "Edit your blog"
 
+  comments:
+    form:
+      comment: "Post"
+
   users:
     edit:
       heading: "Edit your profile"

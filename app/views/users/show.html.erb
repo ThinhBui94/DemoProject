@@ -6,7 +6,7 @@
         <p><%= link_to "Edit Profile", edit_user_path(current_user) %></p>
         <div class="relation row">
           <div class="col-lg-6">
-            <p>Add friend</p>
+            <%= link_to "Add Friend", friendships_path, remote: true %>
           </div>
           <div class="col-lg-6">
             <p>Cancel</p>
@@ -25,6 +25,13 @@
         <div id="friend" class="tab-pane fade in active">
         </div>
         <div id="like" class="tab-pane fade">
+          <% if !@like_posts.empty? %>
+            <% @like_posts.each do |like_post| %>
+              <%= link_to like_post.post.title, like_post.post, class: "count-in-profile" %><br>
+              <span>Like at</span> <%= like_post.created_at.strftime("%H:%M:%S %d/%m/%Y") %><br>
+              <hr>
+            <% end %>
+          <% end %>
         </div>
         <div id="comment" class="tab-pane fade">
         </div>

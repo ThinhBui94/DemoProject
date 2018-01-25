@@ -1,10 +1,43 @@
 <div class="row">
-  <div class="col-lg-8 col-lg-offset-2">
-    <%= @post.title %><br>
-    <%= @post.created_at %><br>
-    <%= link_to @post.user.email, user_path(@post.user) %>
+  <div class="col-lg-8 col-lg-offset-2 blog-content">
+    <div class="blog-title">
+      <%= @post.title %>
+    </div>
+    <p>Created at: <%= @post.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+    <div class="post-owner">
+      <%= link_to @post.user.email, user_path(@post.user) %>
+    </div>
     <div class="markdown">
       <%= markdown @post.body %>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    <% if user_signed_in? && like?(@post.id) %>
+      <%= button_to post_like_posts_path(@post.id), remote: true, class: "clear" do %>
+        <p class="count" id="like_count_<%= @post.id %>"><%= @post.like_posts.count %></p>
+        <i class="fa fa-thumbs-o-up fa-thumbs-o-up-press" id="like_<%= @post.id %>" aria-hidden="true"></i>
+      <% end %>
+    <% else %>
+      <%= button_to post_like_posts_path(@post.id), remote: true, class: "clear" do %>
+        <p class="count" id="like_count_<%= @post.id %>"><%= @post.like_posts.count %></p>
+        <i class="fa fa-thumbs-o-up" id="like_<%= @post.id %>" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-lg-8 col-lg-offset-2">
+    <hr>
+  </div>
+</div>
+<div class="col-lg-8 col-lg-offset-2">
+  <% if user_signed_in? %>
+    <div class="comment-form well">
+      <%= render "comments/form" %>
+    </div>
+  <% end %>
+  <hr>
+  <div class="showing-comments">
+    <%= render @post.comments %>
   </div>
 </div>
